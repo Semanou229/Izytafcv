@@ -278,9 +278,149 @@ export const es: Translations = {
   aiEmptyError: 'Por favor, añade algo de experiencia o habilidades primero para generar un resumen con IA.',
 };
 
-export type Translations = typeof en;
+export const fr = {
+  // Common
+  add: 'Ajouter',
+  cancel: 'Annuler',
+  goBack: "Retour à la page d'accueil",
+
+  // Landing Page
+  appName: 'Izytaf CV',
+  headerTitle: 'Créateur de CV Professionnel',
+  heroTitle: 'Créez un CV professionnel en quelques minutes',
+  heroSubtitle: "Choisissez parmi des modèles conçus par des experts, personnalisez-les à votre goût et décrochez l'emploi de vos rêves. Simple, rapide et efficace.",
+  heroCTA: 'Créer mon CV maintenant',
+  featuresTitle: 'Pourquoi choisir notre créateur de CV ?',
+  feature1Title: 'Modèles professionnels',
+  feature1Desc: 'Choisissez parmi une variété de modèles modernes, classiques et créatifs conçus par des professionnels.',
+  feature2Title: 'Personnalisation facile',
+  feature2Desc: 'Modifiez les couleurs, polices et mises en page en un clic pour refléter votre style personnel.',
+  feature3Title: 'Aperçu en temps réel',
+  feature3Desc: 'Voyez vos modifications instantanément grâce à un aperçu en direct de votre CV.',
+  feature4Title: 'Assistant IA intégré',
+  feature4Desc: 'Utilisez notre intelligence artificielle pour générer un résumé professionnel percutant à partir de votre profil.',
+  howItWorksTitle: 'Comment ça marche',
+  step1Title: 'Remplissez vos informations',
+  step1Desc: 'Saisissez vos informations personnelles, votre expérience, votre formation et vos compétences dans notre formulaire intuitif.',
+  step2Title: 'Personnalisez votre design',
+  step2Desc: 'Choisissez un modèle, sélectionnez vos polices et une couleur d’accent pour rendre votre CV unique.',
+  step3Title: 'Téléchargez et imprimez',
+  step3Desc: 'Prévisualisez votre CV final et téléchargez-le en PDF de haute qualité, prêt à être envoyé.',
+  templatesTitle: 'Des modèles élégants pour tous les métiers',
+  templateModern: 'Moderne',
+  templateClassic: 'Classique',
+  templateCreative: 'Créatif',
+  templateProfessional: 'Professionnel',
+  finalCTATitle: 'Prêt à construire votre avenir ?',
+  finalCTADesc: 'Commencez à créer votre CV professionnel dès aujourd’hui et franchissez une nouvelle étape dans votre carrière.',
+  footerText: '© 2025 Izytaf CV. Tous droits réservés.',
+
+  // Personal Info
+  personalInfo: 'Informations personnelles',
+  fullName: 'Nom complet',
+  fullNamePlaceholder: 'ex. Marie Dupont',
+  professionalTitle: 'Titre professionnel',
+  professionalTitlePlaceholder: 'ex. Développeur Frontend Senior',
+  email: 'Adresse e-mail',
+  emailPlaceholder: 'ex. marie.dupont@example.com',
+  phone: 'Numéro de téléphone',
+  phonePlaceholder: 'ex. +229 90 00 00 00',
+  location: 'Localisation',
+  locationPlaceholder: 'ex. Cotonou, Bénin',
+  website: 'Site web / Portfolio',
+  websitePlaceholder: 'ex. mariedupont.com',
+  photo: 'Photo',
+
+  // Summary
+  summary: 'Résumé',
+  summaryLabel: 'Résumé professionnel',
+  summaryPlaceholder: 'Rédigez un court résumé de vos compétences et expériences, ou cliquez sur "Générer avec l’IA" !',
+  aiSummaryHelperText: 'Cliquez sur "Générer avec l’IA" pour créer un résumé professionnel à partir de vos expériences et compétences.',
+
+  // Experience
+  experience: 'Expérience professionnelle',
+  jobTitle: 'Poste occupé',
+  company: 'Entreprise',
+  startDate: 'Date de début',
+  startDatePlaceholder: 'ex. Janv 2020',
+  endDate: 'Date de fin',
+  endDatePlaceholder: 'ex. Aujourd’hui',
+  description: 'Description',
+  descriptionPlaceholder: 'Décrivez vos responsabilités et réalisations...',
+
+  // Education
+  education: 'Éducation',
+  degree: 'Diplôme / Domaine d’études',
+  institution: 'Établissement',
+  eduStartDatePlaceholder: 'ex. Sep 2016',
+  eduEndDatePlaceholder: 'ex. Juin 2020',
+
+  // Courses
+  courses: 'Formations / Cours',
+  courseName: 'Nom du cours',
+  courseInstitution: 'Institution',
+  courseEndDate: 'Année de fin',
+  courseEndDatePlaceholder: 'ex. 2021',
+
+  // Skills & Languages
+  skills: 'Compétences',
+  skillPlaceholder: 'ex. TypeScript',
+  languages: 'Langues',
+  languageNamePlaceholder: 'ex. Français',
+  languageLevelPlaceholder: 'ex. Courant',
+
+  // Preview Placeholders
+  contact: 'Contact',
+  profile: 'Profil',
+  yourName: 'Votre nom',
+  yourTitle: 'Votre titre',
+  previewEmail: 'votre.email@example.com',
+  previewPhone: '(+229) 90 00 00 00',
+  previewLocation: 'Ville, Pays',
+  previewWebsite: 'votre-site.com',
+  previewSummary: 'Un résumé bref et percutant de votre parcours professionnel, de vos compétences et de vos objectifs. Mettez en avant vos réalisations clés et ce que vous pouvez apporter à un futur employeur.',
+  previewJobTitle: 'Intitulé du poste',
+  previewCompany: 'Nom de l’entreprise',
+  previewDate: 'Mois Année - Présent',
+  previewDescription: '- Décrivez vos principales responsabilités et réalisations.\n- Utilisez des puces pour plus de clarté.\n- Quantifiez vos résultats quand c’est possible (ex. "Augmentation du chiffre d’affaires de 20%").',
+  previewDegree: 'Nom du diplôme',
+  previewInstitution: 'Nom de l’établissement',
+  previewCourseName: 'Nom du cours ou de la certification',
+  previewSkill: 'Votre compétence',
+  previewLang: 'Langue',
+  previewProficiency: 'Niveau de maîtrise',
+
+  // Print Modal
+  printPreviewTitle: 'Aperçu avant impression',
+  pdfHelperText: 'Voici un aperçu de votre CV. Utilisez la fonction d’impression de votre navigateur (Ctrl/Cmd + P) pour l’enregistrer en PDF.',
+  printNow: 'Imprimer maintenant',
+
+  // CVBuilder additional strings
+  aiAssist: 'Assistance IA',
+  aiAssistTooltip: 'Générer un résumé professionnel avec l’IA',
+  customize: 'Personnaliser',
+  template: 'Modèle',
+  fontFamily: 'Police de caractères',
+  textAlign: 'Alignement du texte',
+  accentColor: 'Couleur d’accent',
+  fontSize: 'Taille de police',
+  fontSizeXS: 'Très petite',
+  fontSizeS: 'Petite',
+  fontSizeM: 'Moyenne',
+  fontSizeL: 'Grande',
+  fontSizeXL: 'Très grande',
+  download: 'Télécharger en PDF',
+  print: 'Imprimer',
+  loading: 'Chargement...',
+  generateWithAI: 'Générer avec l’IA',
+  aiError: 'Échec de la génération du résumé. Veuillez réessayer.',
+  aiEmptyError: 'Veuillez d’abord ajouter de l’expérience ou des compétences pour générer un résumé avec l’IA.',
+};
+
+export type Translations = typeof fr;
 
 export const translations = {
-    en,
-    es,
+  en,
+  es,
+  fr,
 };
