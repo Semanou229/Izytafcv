@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="fr" class="scroll-smooth">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Professional CV Builder</title>
+  <title>Créateur de CV Professionnel | Izytaf CV</title>
   
-  <!-- Tailwind CSS from CDN -->
+  <!-- Tailwind CSS depuis le CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   
   <!-- Google Fonts -->
@@ -13,9 +13,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Noto+Sans:wght@400;700&family=Noto+Serif:wght@400;700&family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
 
-  <!-- Global Styles & Print Configuration -->
+  <!-- Styles globaux et configuration d’impression -->
   <style>
-    /* Custom scrollbar for better aesthetics on Webkit browsers */
+    /* Barre de défilement personnalisée (navigateurs Webkit) */
     ::-webkit-scrollbar {
       width: 8px;
       height: 8px;
@@ -31,12 +31,12 @@
       background: #64748b; /* slate-500 */
     }
     
-    /* Global base text color */
+    /* Couleur globale du texte */
     body {
         color: #334155; /* slate-700 */
     }
     
-    /* Animation for landing page sections */
+    /* Animation d’apparition pour les sections d’accueil */
     @keyframes fadeIn {
         from { opacity: 0; transform: translateY(20px); }
         to { opacity: 1; transform: translateY(0); }
@@ -46,7 +46,7 @@
         animation: fadeIn 0.8s ease-out forwards;
     }
 
-    /* Animation for notification toast */
+    /* Animation pour les notifications (toast) */
     @keyframes slideInRight {
         from {
             opacity: 0;
@@ -61,19 +61,19 @@
         animation: slideInRight 0.4s ease-out forwards;
     }
 
-    /* Styles for printing the CV */
+    /* Styles d’impression du CV */
     @media print {
-      /* Hide the main application container from print */
+      /* Masquer le conteneur principal à l’impression */
       .screen-only {
         display: none !important;
       }
 
-      /* Show the dedicated print container */
+      /* Afficher le conteneur dédié à l’impression */
       .print-only {
         display: block !important;
       }
       
-      /* Ensure the CV inside the print container is styled correctly */
+      /* Forcer le style du CV à l’impression */
       #cv-for-print {
         margin: 0;
         transform: scale(1) !important;
@@ -89,14 +89,14 @@
     }
     
     @media screen {
-      /* Hide the dedicated print container from the screen */
+      /* Masquer le conteneur d’impression à l’écran */
       .print-only {
         display: none;
       }
     }
   </style>
   
-  <!-- Import Map for ES Modules -->
+  <!-- Import Map pour les modules ES -->
   <script type="importmap">
   {
     "imports": {
@@ -109,10 +109,10 @@
   </script>
 </head>
 <body class="bg-slate-100">
-  <!-- The root element where the React app will be mounted -->
+  <!-- Élément racine où l’application React sera montée -->
   <div id="root"></div>
   
-  <!-- Main script to load the React application -->
+  <!-- Script principal pour charger l’application React -->
   <script type="module" src="/index.tsx"></script>
 </body>
 </html>
