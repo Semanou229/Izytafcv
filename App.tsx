@@ -6,7 +6,7 @@ import type { LanguageKey } from './types';
 
 function App() {
   const [view, setView] = useState<'landing' | 'builder'>('landing');
-  const [language, setLanguage] = useState<LanguageKey>('en');
+  const [language, setLanguage] = useState<LanguageKey>('fr');
 
   const handleStartBuilding = useCallback(() => {
     setView('builder');
