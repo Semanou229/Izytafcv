@@ -39,23 +39,31 @@ interface LanguageSwitcherProps {
   setLanguage: (lang: LanguageKey) => void;
 }
 const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({ language, setLanguage }) => (
-    <div className="flex items-center text-sm bg-blue-500 p-0.5 rounded-full">
-      <button 
-        onClick={() => setLanguage('en')} 
-        className={`px-3 py-1 rounded-full text-sm font-medium transition-colors duration-200 ${language === 'en' ? 'bg-white text-blue-600' : 'bg-transparent text-white hover:bg-white/20'}`}
-        aria-pressed={language === 'en'}
-      >
-        EN
-      </button>
-      <button 
-        onClick={() => setLanguage('es')} 
-        className={`px-3 py-1 rounded-full text-sm font-medium transition-colors duration-200 ${language === 'es' ? 'bg-white text-blue-600' : 'bg-transparent text-white hover:bg-white/20'}`}
-        aria-pressed={language === 'es'}
-      >
-        ES
-      </button>
-    </div>
+  <div className="flex items-center text-sm bg-blue-500 p-0.5 rounded-full">
+    <button 
+      onClick={() => setLanguage('fr')} 
+      className={`px-3 py-1 rounded-full text-sm font-medium transition-colors duration-200 ${language === 'fr' ? 'bg-white text-blue-600' : 'bg-transparent text-white hover:bg-white/20'}`}
+      aria-pressed={language === 'fr'}
+    >
+      FR
+    </button>
+    <button 
+      onClick={() => setLanguage('en')} 
+      className={`px-3 py-1 rounded-full text-sm font-medium transition-colors duration-200 ${language === 'en' ? 'bg-white text-blue-600' : 'bg-transparent text-white hover:bg-white/20'}`}
+      aria-pressed={language === 'en'}
+    >
+      EN
+    </button>
+    <button 
+      onClick={() => setLanguage('es')} 
+      className={`px-3 py-1 rounded-full text-sm font-medium transition-colors duration-200 ${language === 'es' ? 'bg-white text-blue-600' : 'bg-transparent text-white hover:bg-white/20'}`}
+      aria-pressed={language === 'es'}
+    >
+      ES
+    </button>
+  </div>
 );
+
 
 
 const LandingPage: React.FC<LandingPageProps> = ({ onStartBuilding, t, language, setLanguage }) => {
