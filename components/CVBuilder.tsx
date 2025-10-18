@@ -187,13 +187,30 @@ const CVBuilder: React.FC<CVBuilderProps> = ({ t, language, setLanguage, onGoBac
       setIsGenerating(false);
     }
   };
+    
+    const LanguageSwitcher: React.FC = () => (
+  <div className="flex items-center text-sm">
+    <button
+      onClick={() => setLanguage('fr')}
+      className={`px-3 py-1 rounded-l-md ${language === 'fr' ? 'bg-blue-600 text-white' : 'bg-slate-200 text-slate-700'}`}
+    >
+      FR
+    </button>
+    <button
+      onClick={() => setLanguage('en')}
+      className={`px-3 py-1 ${language === 'en' ? 'bg-blue-600 text-white' : 'bg-slate-200 text-slate-700'}`}
+    >
+      EN
+    </button>
+    <button
+      onClick={() => setLanguage('es')}
+      className={`px-3 py-1 rounded-r-md ${language === 'es' ? 'bg-blue-600 text-white' : 'bg-slate-200 text-slate-700'}`}
+    >
+      ES
+    </button>
+  </div>
+);
 
-  const LanguageSwitcher: React.FC = () => (
-    <div className="flex items-center text-sm">
-      <button onClick={() => setLanguage('en')} className={`px-3 py-1 rounded-l-md ${language === 'en' ? 'bg-blue-600 text-white' : 'bg-slate-200 text-slate-700'}`}>EN</button>
-      <button onClick={() => setLanguage('es')} className={`px-3 py-1 rounded-r-md ${language === 'es' ? 'bg-blue-600 text-white' : 'bg-slate-200 text-slate-700'}`}>ES</button>
-    </div>
-  );
 
   return (
     <>
