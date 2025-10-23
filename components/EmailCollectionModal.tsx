@@ -1,16 +1,25 @@
 // Fichier : EmailCollectionModal.tsx
 import React, { useState } from 'react';
 
+// --- Interface des Props de la Modale ---
 interface ModalProps {
     isOpen: boolean;
     onClose: () => void;
-    onSuccess: () => void; // Appelée après l'envoi, pour lancer le téléchargement
+    onSuccess: () => void; // Appelée après l'envoi pour lancer le téléchargement
 }
 
-// 🛑 REMPLACER PAR VOTRE LIEN FORMSPREE 🛑
-const FORMSPREE_URL = "VOTRE_URL_FORMSPREE_ICI"; 
+// 🛑 VOS VALEURS GOOGLE FORMS 🛑
+const GOOGLE_FORM_URL = "https://docs.google.com/forms/u/0/d/e/1FAIpQLScpVccxTUD_8UKD2V2YImfo9Gpx2lWwng6We-596AyTEDzyqA/formResponse"; 
+
+const FIELD_ENTRY_IDS = {
+    NAME: "entry.446767201",    // ID pour le champ Nom
+    EMAIL: "entry.314587565",   // ID pour le champ Email
+    PHONE: "entry.2029197602",   // ID pour le champ Téléphone
+};
+// ------------------------------------
 
 const EmailCollectionModal: React.FC<ModalProps> = ({ isOpen, onClose, onSuccess }) => {
+    // --- États du formulaire ---
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [phone, setPhone] = useState('');
@@ -25,30 +34,28 @@ const EmailCollectionModal: React.FC<ModalProps> = ({ isOpen, onClose, onSuccess
         setIsSubmitting(true);
 
         const formData = new FormData();
-        formData.append('Nom', name);
-        formData.append('Email', email);
-        formData.append('Téléphone', phone); 
+        
+        // 🛑 Utilisation des ENTRY IDs pour la soumission à Google Forms
+        formData.append(FIELD_ENTRY_IDS.NAME, name);
+        formData.append(FIELD_ENTRY_IDS.EMAIL, email);
+        formData.append(FIELD_ENTRY_IDS.PHONE, phone); 
+        // -----------------------------------------------------------------
 
         try {
-            const response = await fetch(FORMSPREE_URL, {
+            const response = await fetch(GOOGLE_FORM_URL, {
                 method: 'POST',
                 body: formData,
-                headers: {
-                    'Accept': 'application/json',
-                },
+                mode: 'no-cors' // Essentiel pour éviter les erreurs CORS avec Google Forms
             });
 
-            // En cas de succès ou d'échec de Formspree (pour ne pas bloquer l'utilisateur)
-            if (response.ok || response.status === 422) { 
-                onClose();
-                onSuccess(); // Déclenche le téléchargement
-            } else {
-                console.error("Erreur Formspree. Téléchargement forcé.");
-                onClose();
-                onSuccess(); 
-            }
+            // En mode 'no-cors', nous ne pouvons pas vérifier le statut, mais la requête part.
+            // On considère l'envoi comme réussi s'il n'y a pas d'erreur réseau.
+            onClose();
+            onSuccess(); // Déclenche le téléchargement du CV
+            
         } catch (error) {
-            console.error("Erreur réseau. Téléchargement forcé.", error);
+            console.error("Erreur réseau lors de la soumission à Google Forms. Téléchargement forcé.", error);
+            // En cas d'erreur réseau (chute de connexion), on permet quand même le téléchargement
             onClose();
             onSuccess(); 
         } finally {
@@ -56,12 +63,13 @@ const EmailCollectionModal: React.FC<ModalProps> = ({ isOpen, onClose, onSuccess
         }
     };
 
+    // --- Rendu du composant (avec Tailwind CSS pour le style) ---
     return (
         <div className="fixed inset-0 bg-black bg-opacity-40 z-[9999] flex items-center justify-center">
             <div className="bg-white rounded-lg shadow-2xl p-6 w-11/12 max-w-lg">
                 <h2 className="text-xl font-bold text-slate-700 mb-3">Téléchargez votre CV Gratuitement !</h2>
                 <p className="text-sm text-slate-500 mb-5">
-                    Pour finaliser le téléchargement, veuillez renseigner vos coordonnées.
+                    Pour finaliser le téléchargement et vous tenir informé des mises à jour, veuillez renseigner vos coordonnées.
                 </p>
                 
                 <form onSubmit={handleSubmit}>
